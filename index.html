@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* CSS CORE & VARIABLES */
+/* CORE STYLES */
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --yellow:#F5A623;
@@ -18,87 +18,71 @@
   --border:#252A32;
   --text:#F0F2F5;
   --muted:#7A8494;
-  --accent:#F5A623;
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:72px;background:rgba(11,14,18,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.nav-logo img{height:32px;width:auto}
+.nav-logo img{height:32px;width:auto;display:block}
 .nav-links{display:flex;align-items:center;gap:32px}
 .nav-links a{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
 .nav-links a:hover{color:var(--text)}
-.nav-cta{display:flex;gap:12px;align-items:center}
 
 /* BUTTONS */
 .btn-ghost{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:8px 18px;border:1px solid var(--border);border-radius:4px;transition:all 0.2s}
-.btn-ghost:hover{color:var(--text);border-color:var(--muted)}
-.btn-primary{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:#000;text-decoration:none;padding:9px 20px;background:var(--yellow);border-radius:4px;transition:background 0.2s}
+.btn-primary{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:#000;text-decoration:none;padding:10px 22px;background:var(--yellow);border-radius:4px;transition:background 0.2s;display:inline-block}
 .btn-primary:hover{background:#ffc145}
 
-/* HERO SECTION */
-.hero{min-height:90vh;display:grid;grid-template-columns:1.2fr 0.8fr;align-items:center;padding:140px 40px 80px;gap:60px;position:relative}
-.hero-content{max-width:800px}
+/* SECTIONS */
+section{padding:100px 40px; border-bottom:1px solid var(--border)}
+
+/* HERO */
+.hero{min-height:90vh;display:grid;grid-template-columns:1.2fr 0.8fr;align-items:center;padding-top:140px;gap:60px}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.25);border-radius:2px;padding:6px 14px;margin-bottom:32px}
 .rec-dot{width:8px;height:8px;border-radius:50%;background:var(--yellow);animation:pulse 1.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
-.hero-eyebrow span{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--yellow)}
-.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(48px,7vw,88px);line-height:0.9;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:28px}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(48px,7vw,88px);line-height:0.9;text-transform:uppercase;margin-bottom:28px}
 .hero h1 em{font-style:normal;color:var(--yellow)}
-.hero-sub{font-size:19px;color:var(--muted);max-width:540px;margin-bottom:48px;line-height:1.6}
-.hero-visual img{width:100%;height:auto;border-radius:8px;border:1px solid var(--border);box-shadow:0 30px 60px rgba(0,0,0,0.5)}
 
-/* STATS BAR */
-.hero-stats{display:flex;margin-top:80px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
-.stat{flex:1;padding:32px 40px;border-right:1px solid var(--border)}
-.stat:last-child{border-right:none}
-.stat-val{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:48px;color:var(--text);line-height:1}
-.stat-val span{color:var(--yellow)}
-.stat-label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);text-transform:uppercase;margin-top:8px;letter-spacing:0.05em}
+/* HOW IT WORKS GRID */
+.how-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:40px;margin-top:60px}
+.how-step{background:var(--bg2);padding:40px;border:1px solid var(--border);border-radius:4px;position:relative}
+.step-num{font-family:'IBM Plex Mono',monospace;color:var(--yellow);font-size:14px;margin-bottom:20px;display:block}
 
-/* PRICING GRID */
+/* PRICING */
 .pricing-container{display:grid;grid-template-columns:repeat(2, 1fr);gap:30px;max-width:1000px;margin:60px auto 0}
-.pricing-card{border:1px solid var(--border);border-radius:4px;background:var(--bg3);display:flex;flex-direction:column}
+.pricing-card{border:1px solid var(--border);border-radius:4px;background:var(--bg3);display:flex;flex-direction:column;overflow:hidden}
 .pricing-card.featured{border-color:var(--yellow);position:relative}
-.featured-label{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--yellow);color:#000;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:800;padding:4px 12px;border-radius:2px;text-transform:uppercase}
-.pricing-header{padding:40px;background:var(--bg2);border-bottom:1px solid var(--border)}
-.pricing-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.featured .pricing-name{color:var(--yellow)}
-.price{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:64px;line-height:1}
-.price sub{font-size:18px;color:var(--muted);font-weight:500}
-.pricing-features{padding:40px;flex-grow:1}
-.pricing-features ul{list-style:none}
-.pricing-features li{display:flex;gap:12px;margin-bottom:16px;font-size:15px;color:var(--text)}
-.pricing-features li span{color:var(--yellow);font-weight:bold}
-.pricing-cta{padding:0 40px 40px}
+.featured-label{position:absolute;top:0;left:0;right:0;background:var(--yellow);color:#000;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:800;padding:4px;text-transform:uppercase}
+.price{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:64px;line-height:1;margin-top:10px}
 
 /* FOOTER */
-footer{padding:80px 40px 40px;background:var(--bg);border-top:1px solid var(--border)}
-.footer-logo img{height:28px;margin-bottom:20px}
+footer{padding:80px 40px;background:var(--bg2)}
+.footer-grid{display:grid;grid-template-columns: 2fr 1fr 1fr 1fr; gap:60px}
+.footer-col h5{font-family:'Barlow Condensed',sans-serif; color:var(--text); text-transform:uppercase; margin-bottom:24px; font-size:16px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:12px}
+.footer-col ul a{color:var(--muted); text-decoration:none; font-size:14px}
+.footer-col ul a:hover{color:var(--yellow)}
 
 @media(max-width:1024px){
-  .hero{grid-template-columns:1fr;padding-top:120px}
-  .hero-visual{display:none}
-  .pricing-container{grid-template-columns:1fr}
+  .hero, .how-grid, .pricing-container, .footer-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="#">
-    <img src="spokelog.png" alt="Spokelog Logo">
-  </a>
+  <a href="#"><img src="spokelog.png" alt="Spokelog"></a>
   <div class="nav-links">
     <a href="#how">How It Works</a>
     <a href="#features">Features</a>
     <a href="#pricing">Pricing</a>
   </div>
-  <div class="nav-cta">
+  <div style="display:flex; gap:12px">
     <a class="btn-ghost" href="https://app.spokelog.com/login">Login</a>
-    <a class="btn-primary" href="https://app.spokelog.com/register">Start 7-Day Trial</a>
+    <a class="btn-primary" href="https://app.spokelog.com/register">Start Trial</a>
   </div>
 </nav>
 
@@ -109,90 +93,102 @@ footer{padding:80px 40px 40px;background:var(--bg);border-top:1px solid var(--bo
       <span>OSHA & CSI MasterFormat Compliant</span>
     </div>
     <h1>Daily logs done<br>before you<br><em>reach your truck</em></h1>
-    <p class="hero-sub">Speak your site report. Spokelog transcribes, extracts labor, materials, and safety data — then generates a professional PDF in 60 seconds.</p>
-    <div class="hero-actions">
-      <a class="btn-primary" style="padding:18px 42px; font-size:18px;" href="https://app.spokelog.com/register">Start 7-Day Free Trial</a>
-    </div>
-    <p style="margin-top:20px; font-family:'IBM Plex Mono'; font-size:12px; color:var(--muted)">// No credit card required · Cancel anytime</p>
+    <p style="font-size:19px; color:var(--muted); margin-bottom:48px; max-width:600px;">Speak your site report. Spokelog transcribes, extracts labor, materials, and safety data — then generates a professional PDF in 60 seconds.</p>
+    <a class="btn-primary" style="padding:18px 42px; font-size:18px;" href="https://app.spokelog.com/register">Start 7-Day Free Trial</a>
   </div>
   <div class="hero-visual">
-    <img src="https://placehold.co/600x800/181C22/F0F2F5?text=PROFESSIONAL+PDF+PREVIEW\n(OSHA+300+LOGS)" alt="Spokelog PDF Sample">
+    <img src="https://placehold.co/600x800/181C22/F0F2F5?text=PROFESSIONAL+PDF+PREVIEW\n(OSHA+COMPLIANT)" alt="PDF Sample">
   </div>
 </section>
 
-<div class="hero-stats">
-  <div class="stat">
-    <div class="stat-val"><span>55</span> min</div>
-    <div class="stat-label">Saved per day per super</div>
+<section id="how">
+  <h2 style="font-family:'Barlow Condensed'; font-size:48px; text-transform:uppercase;">Logs done in 3 taps.</h2>
+  <div class="how-grid">
+    <div class="how-step">
+      <span class="step-num">// 01</span>
+      <h3>Record</h3>
+      <p style="color:var(--muted)">Open the app and speak naturally. No forms, no typing, no iPad fighting.</p>
+    </div>
+    <div class="how-step">
+      <span class="step-num">// 02</span>
+      <h3>Process</h3>
+      <p style="color:var(--muted)">Our AI extracts workers, weather, materials, and safety observations.</p>
+    </div>
+    <div class="how-step">
+      <span class="step-num">// 03</span>
+      <h3>Export</h3>
+      <p style="color:var(--muted)">A professional, branded PDF is filed and sent to your office instantly.</p>
+    </div>
   </div>
-  <div class="stat">
-    <div class="stat-val"><span>60</span> sec</div>
-    <div class="stat-label">From voice to PDF</div>
-  </div>
-  <div class="stat">
-    <div class="stat-val"><span>0</span></div>
-    <div class="stat-label">Manual forms to fill</div>
-  </div>
-</div>
+</section>
 
 <section id="pricing" style="background:var(--bg2)">
-  <div style="text-align:center">
-    <span style="font-family:'IBM Plex Mono'; color:var(--yellow); text-transform:uppercase; letter-spacing:0.2em; font-size:11px;">// Simple Pricing</span>
-    <h2 style="font-family:'Barlow Condensed'; font-size:56px; text-transform:uppercase; margin-top:10px;">Built for scale.</h2>
+  <div style="text-align:center; margin-bottom:40px;">
+    <h2 style="font-family:'Barlow Condensed'; font-size:56px; text-transform:uppercase;">Built for scale.</h2>
   </div>
-
   <div class="pricing-container">
     <div class="pricing-card">
-      <div class="pricing-header">
-        <div class="pricing-name">Solo Pro</div>
+      <div style="padding:40px; border-bottom:1px solid var(--border)">
+        <h4 style="font-family:'Barlow Condensed'; color:var(--muted); text-transform:uppercase;">Solo Pro</h4>
         <div class="price">$49<sub>/mo</sub></div>
-        <p style="font-size:14px; color:var(--muted); margin-top:8px;">Perfect for owner-operators.</p>
       </div>
-      <div class="pricing-features">
-        <ul>
-          <li><span>✓</span> Unlimited AI Logs</li>
-          <li><span>✓</span> PDF Export with Branding</li>
-          <li><span>✓</span> Auto Weather Data</li>
-          <li><span>✓</span> 1 User</li>
+      <div style="padding:40px; flex-grow:1">
+        <ul style="list-style:none;">
+          <li style="margin-bottom:12px">✓ Unlimited AI Logs</li>
+          <li style="margin-bottom:12px">✓ Branded PDF Exports</li>
+          <li>✓ 1 Active User</li>
         </ul>
       </div>
-      <div class="pricing-cta">
-        <a class="btn-ghost" style="display:block; text-align:center;" href="https://app.spokelog.com/register">Start Free Trial</a>
-      </div>
+      <div style="padding:40px"><a class="btn-ghost" style="display:block; text-align:center" href="https://app.spokelog.com/register">Start Solo Trial</a></div>
     </div>
-
     <div class="pricing-card featured">
       <div class="featured-label">Recommended for GC Companies</div>
-      <div class="pricing-header">
-        <div class="pricing-name">Team Plan</div>
+      <div style="padding:40px; border-bottom:1px solid var(--border); padding-top:50px;">
+        <h4 style="font-family:'Barlow Condensed'; color:var(--yellow); text-transform:uppercase;">Team Plan</h4>
         <div class="price">$199<sub>/mo</sub></div>
-        <p style="font-size:14px; color:var(--muted); margin-top:8px;">For growing construction teams.</p>
       </div>
-      <div class="pricing-features">
-        <ul>
-          <li><span>✓</span> <strong>Up to 5 Users included</strong></li>
-          <li><span>✓</span> Central Admin Dashboard</li>
-          <li><span>✓</span> Priority Support</li>
-          <li><span>✓</span> Company-wide Log History</li>
-          <li><span>✓</span> Everything in Solo</li>
+      <div style="padding:40px; flex-grow:1">
+        <ul style="list-style:none;">
+          <li style="margin-bottom:12px">✓ <strong>Up to 5 Users included</strong></li>
+          <li style="margin-bottom:12px">✓ Admin Dashboard</li>
+          <li style="margin-bottom:12px">✓ Company-wide History</li>
+          <li>✓ Priority Support</li>
         </ul>
       </div>
-      <div class="pricing-cta">
-        <a class="btn-primary" style="display:block; text-align:center; padding:16px;" href="https://app.spokelog.com/register">Start Team Trial</a>
-      </div>
+      <div style="padding:40px"><a class="btn-primary" style="display:block; text-align:center; padding:16px" href="https://app.spokelog.com/register">Start Team Trial</a></div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-logo">
-    <img src="spokelog.png" alt="Spokelog">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <img src="spokelog.png" alt="Spokelog" style="height:28px; margin-bottom:20px">
+      <p style="color:var(--muted); font-size:14px;">// AI-powered daily construction logs for US General Contractors. OSHA · CSI MasterFormat · ASTM E2691</p>
+    </div>
+    <div class="footer-col">
+      <h5>Product</h5>
+      <ul>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+        <li><a href="terms_of_service.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="mailto:support@spokelog.com">Contact Support</a></li>
+        <li><a href="https://app.spokelog.com/login">Login</a></li>
+      </ul>
+    </div>
   </div>
-  <div style="display:grid; grid-template-columns: 2fr 1fr 1fr; gap:40px;">
-    <div>
-      <p style="font-family:'IBM Plex Mono'; font-size:12px; color:var(--muted); line-height:1.6;">// AI-powered daily construction logs for US General Contractors. OSHA · CSI MasterFormat · ASTM E2691</p>
-    </div>
-    </div>
   <div style="margin-top:60px; padding-top:20px; border-top:1px solid var(--border); font-family:'IBM Plex Mono'; font-size:11px; color:var(--muted); display:flex; justify-content:space-between;">
     <span>© 2025 Spokelog · Built for the job site</span>
     <span>No contracts · Cancel anytime</span>
