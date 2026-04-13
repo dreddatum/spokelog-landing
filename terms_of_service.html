@@ -1,24 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/><title>Terms of Service — Spokelog</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Terms of Service — Spokelog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-body{background:#0B0E12; color:#F0F2F5; font-family:'Barlow',sans-serif; line-height:1.7}
-nav{padding:20px 40px; border-bottom:1px solid #252A32; display:flex; justify-content:space-between; align-items:center}
-.container{max-width:800px; margin:80px auto; padding:0 40px}
-h1,h2{font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; color:#F5A623}
-h1{font-size:56px; margin-bottom:40px}
-h2{font-size:32px; margin-top:60px; margin-bottom:20px}
-a{color:#F5A623; text-decoration:none}
+/* CORE STYLES FROM INDEX */
+:root{ --yellow:#F5A623; --bg:#0B0E12; --bg2:#111418; --border:#252A32; --text:#F0F2F5; --muted:#7A8494; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:72px;background:var(--bg2);border-bottom:1px solid var(--border)}
+.nav-logo img{height:28px;width:auto}
+.back-link{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:var(--muted);text-decoration:none;text-transform:uppercase;letter-spacing:0.1em}
+.container{max-width:800px;margin:80px auto;padding:0 40px}
+h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:64px;text-transform:uppercase;color:var(--yellow);line-height:1;margin-bottom:10px}
+.meta{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:48px}
+.highlight-box{background:rgba(245,166,35,0.05);border-left:4px solid var(--yellow);padding:24px;border-radius:0 4px 4px 0;margin:32px 0}
+h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:32px;text-transform:uppercase;margin-top:60px;margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:10px}
+p{margin-bottom:20px;color:var(--muted)}
+ul{margin:0 0 24px 24px;color:var(--muted)}
+li{margin-bottom:12px}
+a{color:var(--yellow);text-decoration:none}
 </style>
 </head>
 <body>
-<nav><a href="index.html"><img src="spokelog.png" alt="Spokelog" style="height:24px"></a><a href="index.html" style="color:#7A8494; font-family:'Barlow Condensed'; text-transform:uppercase; font-size:14px; text-decoration:none">Back to Home</a></nav>
+<nav>
+  <a href="index.html"><img src="spokelog.png" alt="Spokelog"></a>
+  <a href="index.html" class="back-link">← Back to Home</a>
+</nav>
 <div class="container">
-<h1>Terms of Service</h1>
-<h2>1. Use of Service</h2>
-<p>By using Spokelog, you agree to provide accurate site data and only record audio in environments where you have the right to do so.</p>
+  <h1>Terms of Service</h1>
+  <p class="meta">Last updated: January 1, 2025 &nbsp;·&nbsp; Effective: January 1, 2025</p>
+
+  <div class="highlight-box">
+    <p style="color:var(--text); font-weight:600; margin:0;">By using Spokelog, you agree to these terms. They are written in plain English and they protect both you and us.</p>
+  </div>
+
+  <h2>1. Acceptance of Terms</h2>
+  <p>By creating an account or using Spokelog ("Service"), you agree to be bound by these Terms of Service.</p>
+
+  <h2>2. Description of Service</h2>
+  <ul>
+    <li>Voice-to-text transcription of field recordings</li>
+    <li>AI-powered extraction of labor, materials, equipment, and safety data</li>
+    <li>PDF export and report generation</li>
+  </ul>
+
+  <h2>3. Your Account</h2>
+  <p>You are responsible for maintaining the security of your account and password. Notify us at <a href="mailto:support@spokelog.com">support@spokelog.com</a> if you suspect unauthorized access.</p>
+
+  <h2>4. Subscription and Payment</h2>
+  <p>Spokelog is $49/month per company.</p>
+  <ul>
+    <li><strong>Free trial:</strong> 7 days, no credit card required</li>
+    <li><strong>Billing:</strong> Monthly, charged on the same day</li>
+    <li><strong>Cancellation:</strong> You may cancel at any time</li>
+    <li><strong>Refunds:</strong> Full refund within 14 days of your first charge if not satisfied</li>
+  </ul>
+
+  <h2>5. Your Content</h2>
+  <p>You own all content you create using Spokelog. You grant us a limited license to process it solely to provide the Service.</p>
+
+  <h2>6. Acceptable Use</h2>
+  <p>You agree not to use Spokelog for unlawful purposes or attempt unauthorized access.</p>
+
+  <h2>7. AI-Generated Content</h2>
+  <p><strong>AI-generated content may contain errors</strong>. You are responsible for reviewing all logs before using them for official records or legal purposes.</p>
+
+  <h2>8. Service Availability</h2>
+  <p>We aim for 99.5% uptime but do not guarantee uninterrupted availability.</p>
+
+  <h2>9. Limitation of Liability</h2>
+  <p>Spokelog's total liability shall not exceed the amount you paid us in the 12 months preceding the claim.</p>
+
+  <h2>10. Termination</h2>
+  <p>Upon termination, you may export your data within 30 days, after which it will be permanently deleted.</p>
+
+  <h2>11. Governing Law</h2>
+  <p>These terms are governed by the laws of the State of Delaware, United States.</p>
+
+  <h2>12. Changes to Terms</h2>
+  <p>We will notify you by email at least 14 days before material changes take effect.</p>
+
+  <h2>13. Contact</h2>
+  <p>Questions? Email us at <a href="mailto:legal@spokelog.com">legal@spokelog.com</a></p>
 </div>
 </body>
 </html>
