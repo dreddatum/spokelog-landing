@@ -7,19 +7,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* CORE & UI VARS */
+/* CSS CORE & UI VARIABLES */
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --yellow:#F5A623;
-  --bg:#0B0E12;
-  --bg2:#111418;
-  --bg3:#181C22;
-  --border:#252A32;
-  --text:#F0F2F5;
-  --muted:#7A8494;
-}
+:root{ --yellow:#F5A623; --bg:#0B0E12; --bg2:#111418; --bg3:#181C22; --border:#252A32; --text:#F0F2F5; --muted:#7A8494; }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.6}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.6;overflow-x:hidden}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:72px;background:rgba(11,14,18,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
@@ -42,7 +34,7 @@ h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:56px;text
 .hero h1 em{font-style:normal;color:var(--yellow)}
 .hero-visual img{width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 30px 60px rgba(0,0,0,0.5)}
 
-/* CARDS GRID */
+/* GRID LAYOUTS */
 .grid-3{display:grid;grid-template-columns:repeat(3, 1fr);gap:30px}
 .card{background:var(--bg2);padding:40px;border:1px solid var(--border);border-radius:4px}
 .card span{font-family:'IBM Plex Mono',monospace;color:var(--yellow);font-size:12px;margin-bottom:20px;display:block}
@@ -52,6 +44,12 @@ h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:56px;text
 .p-card{background:var(--bg3);border:1px solid var(--border);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
 .p-card.featured{border-color:var(--yellow);position:relative}
 .featured-tag{background:var(--yellow);color:#000;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:800;padding:6px;text-transform:uppercase}
+.p-header{padding:40px; border-bottom:1px solid var(--border); background:var(--bg2)}
+.price{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:64px;line-height:1}
+.p-features{padding:40px; flex-grow:1}
+.p-features ul{list-style:none}
+.p-features li{margin-bottom:12px; font-size:15px; display:flex; gap:10px}
+.p-features li b{color:var(--yellow)}
 
 /* FOOTER */
 footer{padding:80px 40px;background:var(--bg2)}
@@ -112,25 +110,39 @@ footer{padding:80px 40px;background:var(--bg2)}
   <h2 style="text-align:center">Transparent Pricing</h2>
   <div class="pricing-grid">
     <div class="p-card">
-      <div style="padding:40px; border-bottom:1px solid var(--border)">
+      <div class="p-header">
         <h4 style="font-family:'Barlow Condensed'; color:var(--muted); text-transform:uppercase;">Solo Pro</h4>
-        <div style="font-family:'Barlow Condensed'; font-weight:900; font-size:64px;">$49<sub>/mo</sub></div>
+        <div class="price">$49<sub>/mo</sub></div>
       </div>
-      <div style="padding:40px; flex-grow:1">
-        <ul><li style="margin-bottom:12px">✓ Unlimited AI Logs</li><li style="margin-bottom:12px">✓ Branded PDFs</li><li>✓ 1 User</li></ul>
+      <div class="p-features">
+        <ul>
+          <li><b>✓</b> Unlimited AI Transcription</li>
+          <li><b>✓</b> Branded PDF Export</li>
+          <li><b>✓</b> Automatic Weather Logging</li>
+          <li><b>✓</b> OSHA Compliant Formatting</li>
+          <li><b>✓</b> Secure Cloud Backup</li>
+          <li><b>✓</b> 1 Active User</li>
+        </ul>
       </div>
-      <div style="padding:40px"><a class="btn-ghost" style="display:block; text-align:center" href="#">Start Solo Trial</a></div>
+      <div style="padding:0 40px 40px"><a class="btn-ghost" style="display:block; text-align:center" href="#">Start Solo Trial</a></div>
     </div>
     <div class="p-card featured">
       <div class="featured-tag">Most Popular for GC Teams</div>
-      <div style="padding:40px; border-bottom:1px solid var(--border); padding-top:50px;">
+      <div class="p-header" style="padding-top:50px;">
         <h4 style="font-family:'Barlow Condensed'; color:var(--yellow); text-transform:uppercase;">Team Plan</h4>
-        <div style="font-family:'Barlow Condensed'; font-weight:900; font-size:64px;">$199<sub>/mo</sub></div>
+        <div class="price">$199<sub>/mo</sub></div>
       </div>
-      <div style="padding:40px; flex-grow:1">
-        <ul><li style="margin-bottom:12px">✓ Up to 5 Users</li><li style="margin-bottom:12px">✓ Admin Dashboard</li><li>✓ Priority Support</li></ul>
+      <div class="p-features">
+        <ul>
+          <li><b>✓</b> <b>Up to 5 Users Included</b></li>
+          <li><b>✓</b> Central Company Dashboard</li>
+          <li><b>✓</b> CSI MasterFormat Integration</li>
+          <li><b>✓</b> Admin Review Workflow</li>
+          <li><b>✓</b> Priority 24/7 Support</li>
+          <li><b>✓</b> Everything in Solo Pro</li>
+        </ul>
       </div>
-      <div style="padding:40px"><a class="btn-primary" style="display:block; text-align:center; padding:16px" href="#">Start Team Trial</a></div>
+      <div style="padding:0 40px 40px"><a class="btn-primary" style="display:block; text-align:center; padding:16px" href="#">Start Team Trial</a></div>
     </div>
   </div>
 </section>
@@ -139,7 +151,7 @@ footer{padding:80px 40px;background:var(--bg2)}
   <div class="f-grid">
     <div class="f-col">
       <img src="spokelog.png" alt="Spokelog" style="height:26px; margin-bottom:20px">
-      <p style="color:var(--muted); font-size:14px;">// AI-powered daily construction logs for US General Contractors.</p>
+      <p style="color:var(--muted); font-size:14px;">// AI-powered daily construction logs for US General Contractors. OSHA · CSI MasterFormat · ASTM E2691</p>
     </div>
     <div class="f-col"><h5>Product</h5><ul><li><a href="#how">How It Works</a></li><li><a href="#features">Features</a></li><li><a href="#pricing">Pricing</a></li></ul></div>
     <div class="f-col"><h5>Legal</h5><ul><li><a href="privacy_policy.html">Privacy Policy</a></li><li><a href="terms_of_service.html">Terms of Service</a></li></ul></div>
